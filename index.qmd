@@ -17,6 +17,7 @@ library(tidyverse)
 library(DiagrammeR)
 library(haven)
 library(gt)
+library(gtsummary)
 ```
 
 
@@ -42,12 +43,39 @@ names(data_cor)
 nrow(data_cor)
 ```
 
+#### Cek jenis Variabel
+
+```{r}
+str(data_cor)
+```
+
+#### Lihat Data
 
 Mari kita lihat isi tabel, kebetulan tidak terlalu besar.
 
 ```{r}
 gt(data_cor)
 ```
+
+
+#### Cek Summary
+
+```{r}
+summary(data_cor)
+```
+
+#### Periksa apakah ada outlier
+```{r}
+#| fig-height: 6
+#| fig-width: 6
+
+par(mfrow=c(2,2))
+plot(data_cor$Hb, ylab = "HB")
+plot(data_cor$Hct, ylab = "HCT")
+plot(data_cor$MHCH, ylab = "MHCH")
+plot(data_cor$MCH2, ylab = "MCH2")
+```
+
 
 
 
