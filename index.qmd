@@ -1,0 +1,68 @@
+---
+title: "COTIK - Coba Statistik"
+author: "Wiryadana"
+format: html
+editor: visual
+---
+
+## Library
+
+Mari kita load beberapa modul untuk melakukan perhitungan statistik yang dibutuhkan.
+```{r}
+#| output: false
+#| warning: false
+
+
+library(tidyverse)
+library(DiagrammeR)
+library(haven)
+library(gt)
+```
+
+
+## Linear Regression & Correlation
+
+### Load Data
+Langkah pertama adalah load data dari file tugas berupa file .sav (file worksheet SPSS) dengan modul Haven.
+```{r}
+data_cor <- read_sav("Latihan statistik MKDU PPDS! September 2023.sav")
+```
+
+### Overview Data
+
+Mari kita intip dulu dimensi datanya.
+
+#### Melihat Variabel-variabel pada data
+```{r}
+names(data_cor)
+```
+
+#### Melihat jumlah Row
+```{r}
+nrow(data_cor)
+```
+
+
+Mari kita lihat isi tabel, kebetulan tidak terlalu besar.
+
+```{r}
+gt(data_cor)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
